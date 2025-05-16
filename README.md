@@ -35,30 +35,32 @@ Angular, Ionic Framework, Capacitor, Ionic Storage, TypeScript, HTML/CSS
 ---
 
 ## How to Run
-**Browser Preview**
-```bash
+### Browser Preview
+bash
 npm install
 ionic serve
 
-Mobile Preview:
+### Mobile Preview:
 ionic build
 npx cap add ios/android
 npx cap open ios/android
 
 ---
 
-Development Time: 10-15 hours of design, coding, debugging, and testing.
+### Development Time: 
+10-15 hours of design, coding, debugging, and testing.
 
 ---
 
-Resources Consulted: Ionic Framework Docs, Angular Documentation, Ionic Storage, Stack Overflow (various syntax/debugging)
+### Resources Consulted: 
+Ionic Framework Docs, Angular Documentation, Ionic Storage, Stack Overflow (various syntax/debugging)
 
 ---
 
-Collaboration:
+### Collaboration:
 Developed independently. Participated in peer discussions and reviewed class threads for debugging techniques, especially on data storage and state persistence.
 
 ---
-## Reflections
+### Reflections
 This project gave me hands-on experience with hybrid app development, component-based design, and local data storage. I practiced balancing functionality with UX simplicity and ensured cross-device responsiveness — a solid foundation for future mobile health tracking apps.
 
