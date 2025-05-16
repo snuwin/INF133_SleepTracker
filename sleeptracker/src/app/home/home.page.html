@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Dark Background -->
+<ion-content color="dark" [fullscreen]="true">
+  
+  <div class="home-container">
+    
+    <ion-card class="home-card" (click)="navigateTo('/log-overnight')">
+      <ion-card-content>
+        <img src="assets/icon/moon.png" class="home-icon" alt="Moon Icon">
+        <h2>Log Overnight Sleep</h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="home-card" (click)="navigateTo('/day-log')">
+      <ion-card-content>
+        <img src="assets/icon/sunny.png" class="home-icon" alt="Sunny Icon">
+        <h2>Daytime Sleepiness</h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="home-card" (click)="navigateTo('/view-data')">
+      <ion-card-content>
+        <img src="assets/icon/analytics.png" class="home-icon" alt="Analytics Icon">
+        <h2>View All Data</h2>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>

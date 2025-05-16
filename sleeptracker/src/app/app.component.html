@@ -1,0 +1,27 @@
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="navigateTo('/home')">
+        <img src="assets/icon/home.png" width="24" height="24" />
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="navigateTo('/log-overnight')">
+        <img src="/assets/icon/moon.png" width="24" height="24" />
+        <ion-label>Sleep Log</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="navigateTo('/day-log')">
+        <img src="/assets/icon/sunny.png" width="24" height="24" />
+        <ion-label>Day Log</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="navigateTo('/view-data')">
+        <img src="/assets/icon/analytics.png" width="24" height="24" />
+        <ion-label>View Data</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>

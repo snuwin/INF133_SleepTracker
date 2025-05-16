@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>View Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+
+  <!-- Overnight Sleep Logs -->
+  <ion-card *ngIf="overnightLogs.length > 0">
+    <ion-card-header>
+      <ion-card-title>Overnight Sleep Logs</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let log of overnightLogs">
+          <ion-label>
+            <h3>{{ log.date | date:'short' }}</h3>
+            <p><strong>Start:</strong> {{ log.startTime | date:'shortTime' }}</p>
+            <p><strong>End:</strong> {{ log.endTime | date:'shortTime' }}</p>
+            <p><strong>Notes:</strong> {{ log.notes || 'No notes' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="overnightLogs.length === 0">
+    <ion-card-content>
+      <p>No overnight sleep data logged yet.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Daytime Sleepiness Logs -->
+  <ion-card *ngIf="sleepinessLogs.length > 0">
+    <ion-card-header>
+      <ion-card-title>Daytime Sleepiness Logs</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let log of sleepinessLogs">
+          <ion-label>
+            <h3>{{ log.date | date:'short' }}</h3>
+            <p><strong>Level:</strong> {{ log.level }} - {{ log.description }}</p>
+            <p><strong>Notes:</strong> {{ log.notes || 'No notes' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="sleepinessLogs.length === 0">
+    <ion-card-content>
+      <p>No sleepiness logs recorded yet.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div style="text-align:center; margin: 1rem 0;">
+    <ion-button color="danger" (click)="clearData()">
+      Clear All Data
+    </ion-button>
+  </div>
+
+</ion-content>

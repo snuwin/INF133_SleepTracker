@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Day Log</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Select Your Sleepiness Level</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Sleepiness</ion-label>
+        <ion-select [(ngModel)]="selectedSleepiness" placeholder="Choose level">
+          <ion-select-option *ngFor="let level of sleepinessLevels; let i = index" [value]="i">
+            {{ i }}: {{ level }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-button expand="block" color="secondary" (click)="toggleInfo()">
+        Show Instructions
+      </ion-button>
+
+      <ion-button expand="block" (click)="logSleepiness()" color="primary">
+        Log Sleepiness
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showInfo">
+    <ion-card-header>
+      <ion-card-title>Instructions</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Please select the appropriate sleepiness level based on the descriptions provided.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

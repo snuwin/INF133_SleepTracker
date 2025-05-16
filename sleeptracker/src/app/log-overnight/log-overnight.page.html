@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Sleep Log</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Give the content a dark background -->
+<ion-content color="dark" [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Sleep Time</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Start Time</ion-label>
+        <ion-datetime 
+          [value]="startTime"
+          (ionChange)="onStartTimeChange($event.detail.value)"
+          presentation="time"
+          hourCycle="h23" />
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Wake Time</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>End Time</ion-label>
+        <ion-datetime 
+          [value]="endTime"
+          (ionChange)="onEndTimeChange($event.detail.value)"
+          presentation="time"
+          hourCycle="h23" />
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Sleep Notes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea
+        name="notes"
+        rows="3"
+        placeholder="Enter your notes..."
+        [(ngModel)]="notes">
+      </ion-textarea>
+    </ion-card-content>
+  </ion-card>
+
+  <div style="text-align:center; margin: 1rem 0;">
+    <ion-button color="primary" (click)="submit()">
+      SUBMIT
+    </ion-button>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Instructions</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Please provide the following details for your sleep log:<br>
+      &bull; Select the sleep start time.<br>
+      &bull; Select the wake-up time.<br>
+      &bull; Enter any sleep notes in the text area.<br>
+      Click "SUBMIT" when you're done.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
